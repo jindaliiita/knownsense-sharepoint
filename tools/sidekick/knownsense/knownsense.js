@@ -2,8 +2,11 @@ const getAllBlocksList = async () => {
   const url = "https://main--knownsense--jindaliiita.hlx.live/tools/sidekick/library.json";
   const result = await fetch(url);
 
-  if (result) {
-    console.log(result.text());
+  if (result.ok) {
+    const textResult = await result.text();
+    console.log(textResult);
+  } else {
+    console.error('Error:', result.status);
   }
   // fetch(url)
   //   .then(response => response.text())
