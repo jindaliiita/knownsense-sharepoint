@@ -1,7 +1,7 @@
-var iframe = document.getElementsByTagName("iframe")[0];
-if (iframe) {
-    iframe.contentDocument.addEventListener("keypress", function(evt) {
-        console.log("iframe keypress: " + evt.which);
-        alert("button pressed");
-    }, false);
-}
+document.addEventListener('keydown', (event) => {
+    var name = event.key;
+    var code = event.code;
+    // Alert the key name and key code on keydown
+    alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+}, false);
+console.log("keypress listener added");
