@@ -1,7 +1,7 @@
-document.addEventListener('keydown', (event) => {
-    var name = event.key;
-    var code = event.code;
-    // Alert the key name and key code on keydown
-    alert(`Key pressed ${name} \r\n Key code value: ${code}`);
-}, false);
-console.log("keypress listener added");
+document.addEventListener('keydown', function(event) {
+    // Check if the pressed key is an alphabet
+    if (/^[a-zA-Z0-9]$/.test(event.key)) {
+      console.log('pressed key:', event.key);
+      // Add your custom logic here
+    }
+  });
